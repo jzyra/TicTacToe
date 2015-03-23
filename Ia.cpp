@@ -37,9 +37,9 @@ int Ia::eval(Game game, int x, int y){
 		++line4;
 	//If position is winner's position.
 	if(line1 > 2 
-		|| line2 > 2 
-		|| line3 > 2 
-		|| line4 > 2){
+	|| line2 > 2 
+	|| line3 > 2 
+	|| line4 > 2){
 		//If IA win.
 		if(player == CELL_IA){
 			return 1000 + game.countPawns(CELL_EMPTY);
