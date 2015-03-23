@@ -39,7 +39,7 @@ int Ia::eval(Game game, int x, int y){
 	if(line1 > 2 
 	|| line2 > 2 
 	|| line3 > 2 
-	|| line4 > 2){
+	|| line4 > 2) {
 		//If IA win.
 		if(player == CELL_IA){
 			return 1000 + game.countPawns(CELL_EMPTY);
@@ -84,8 +84,7 @@ int Ia::eval(Game game, int x, int y){
 }
 
 int Ia::getMax(Game game, int pos, int alpha, int beta){
-	int gameValue, tmp;
-	gameValue = tmp = -10000;
+	int tmp = -10000;
 	if(game.checkWin(pos%MATRICE_SIZE, pos/MATRICE_SIZE)){
 	//If position played is winner's position, return evaluation of this position.
 		return eval(game, pos%MATRICE_SIZE, pos/MATRICE_SIZE);
@@ -113,8 +112,7 @@ int Ia::getMax(Game game, int pos, int alpha, int beta){
 }
 
 int Ia::getMin(Game game, int pos, int alpha, int beta){
-	int gameValue, tmp;
-	gameValue = tmp = +10000;
+	int tmp = +10000;
 	//If position played is winner's position, return evaluation of this position.
 	if(game.checkWin(pos%MATRICE_SIZE, pos/MATRICE_SIZE)){
 		return eval(game, pos%MATRICE_SIZE, pos/MATRICE_SIZE);
