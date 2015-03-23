@@ -85,9 +85,9 @@ bool Game::checkWin(int x, int y){
 		++line4;
 	//If there are 3 pawns in line, position wine.
 	if(line1 > 2 
-		|| line2 > 2 
-		|| line3 > 2 
-		|| line4 > 2)
+	|| line2 > 2 
+	|| line3 > 2 
+	|| line4 > 2)
 		return true;
 	else
 		return false;
