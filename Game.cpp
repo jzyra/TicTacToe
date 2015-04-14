@@ -16,15 +16,15 @@ Game::Game(){
 	_round = false;
 }
 
-bool Game::getRound(){
+bool Game::getRound() const {
 	return _round;
 }
 
-void Game::setRound(bool round){
+void Game::setRound(bool round) {
 	_round = round;
 }
 
-bool Game::isEndGame(){
+bool Game::isEndGame() const {
 	int nbEmptyCell = 0;
 	nbEmptyCell = countPawns(CELL_EMPTY);
 	//If there are more than 0 empty cell.
@@ -34,7 +34,7 @@ bool Game::isEndGame(){
 		return true;
 }
 
-int Game::countPawns(int pawn){
+int Game::countPawns(int pawn) const {
 	int count = 0;
 	for(int i=0; i < MATRICE_SIZE; ++i){
 		for(int j=0; j < MATRICE_SIZE; ++j){
@@ -45,7 +45,7 @@ int Game::countPawns(int pawn){
 	return count;
 }
 
-int Game::getMatriceData(int x, int y){
+int Game::getMatriceData(int x, int y) const {
 	//If position can be played.
 	if(x >= 0 && x < MATRICE_SIZE && y >= 0 && y < MATRICE_SIZE)
 		return _matrice[y][x];
@@ -53,13 +53,13 @@ int Game::getMatriceData(int x, int y){
 		return -1;
 }
 
-void Game::setMatriceData(int x, int y, int value){
+void Game::setMatriceData(int x, int y, int value) {
 	//If position can be played.
 	if(x >= 0 && x < MATRICE_SIZE && y >= 0 && y < MATRICE_SIZE)
 		_matrice[y][x] = value;
 }
 
-bool Game::checkWin(int x, int y){
+bool Game::checkWin(int x, int y) const {
 	int player = _matrice[y][x];
 	int line1, line2, line3, line4;
 	line1 = line2 = line3 = line4 = 1;
@@ -93,7 +93,7 @@ bool Game::checkWin(int x, int y){
 		return false;
 }
 
-void Game::printGame(){
+void Game::printGame() const {
 	cout << endl;
 	//For each pawns in _matrice.
 	for(int i=0; i < MATRICE_SIZE; ++i){

@@ -48,6 +48,7 @@ void Referee::iaPlay(Game &game) {
 	cout << "IA round" << endl;
 	Ia ia(game);
 	cellP2 = ia.playPosition();
+	cout << "IA play in : " << cellP2 << endl;
 	game.setMatriceData(cellP2%MATRICE_SIZE, cellP2/MATRICE_SIZE, CELL_IA);
 	if(game.checkWin(cellP2%MATRICE_SIZE, cellP2/MATRICE_SIZE)){
 		game.printGame();

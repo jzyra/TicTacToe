@@ -29,7 +29,7 @@ class Game {
 		* \brief Accessor on round.
 		* \return round.
 	*/
-	bool getRound();
+	bool getRound() const;
 	/*!
 		* \brief Accessor on round.
 		Set round in game.
@@ -40,21 +40,21 @@ class Game {
 		* \brief Determine if is end of game.
 		* \return true if this is the end of game.
 	*/
-	bool isEndGame();
+	bool isEndGame() const;
 	/*!
 		* \brief Count panws in game.
 		Count pawns in function of param.
 		* \param pawn's type.
 		* \return Pawn's count.
 	*/
-	int countPawns(int pawn);
+	int countPawns(int pawn) const;
 	/*!
 		* \brief Get pawn's type.
 		* \param x pawn's position.
 		* \param y pawn's position.
 		* \return Pawn's type.
 	*/
-	int getMatriceData(int x, int y);
+	int getMatriceData(int x, int y) const;
 	/*!
 		* \brief Set pawn's type.
 		* \param x pawn's position.
@@ -68,11 +68,11 @@ class Game {
 		* \param y pawn's position.
 		* \return true if position win.
 	*/
-	bool checkWin(int x, int y);
+	bool checkWin(int x, int y) const;
 	/*!
 		* \brief Print game matrice.
 	*/
-	void printGame();
+	void printGame() const;
 };
 
 #endif
